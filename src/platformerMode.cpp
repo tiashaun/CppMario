@@ -1,6 +1,6 @@
 #include "platformerMode.hpp"
-#include <iostream>
 #include "game.hpp"
+#include "locator.hpp"
 
 using namespace std;
 
@@ -9,9 +9,14 @@ PlatformerMode::PlatformerMode (Game& game) :
 
 void PlatformerMode::doFrame ()
 {
+    Graphics&         graphics  = Locator::graphics();
+    Resources&        resources = Locator::resources();
+    Graphics::Surface image     = resources.loadImage("test.jpg");
     
-    cout << "Platformer." << endl;
+    SDL_BlitSurface(image, NULL, graphics.screen(), NULL);
+    graphics.flip();
+    SDL_Delay(1000);
 
-    this->game.end();
+    this->game_.end();
 }
 

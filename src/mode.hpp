@@ -13,7 +13,7 @@ class Mode
         virtual void doFrame () = 0;
 
     protected:
-        Game& game;
+        Game& game_;
 };
 
 #endif

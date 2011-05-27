@@ -1,4 +1,4 @@
 #include "mode.hpp"
 
 Mode::Mode (Game& game) :
-    game (game) {}
+    game_ (game) {}

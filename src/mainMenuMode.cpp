@@ -12,5 +12,5 @@ void MainMenuMode::doFrame ()
 {
     cout << "Main menu." << endl;
 
-    this->game.switchMode(PlatformerMode::id);
+    this->game_.switchMode(PlatformerMode::id);
 }

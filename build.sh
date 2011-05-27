@@ -1,4 +1,4 @@
-g++ -Wall -o bin/main.bin -Isrc -lSDL -lSDL_image src/*{.hpp,.cpp} || exit 1
+scons || exit 1
 
 echo 'Build succeeded.'
 

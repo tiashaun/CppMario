@@ -1,30 +1,42 @@
 #include "locator.hpp"
 
+using namespace boost;
+
 void Locator::init ()
 {
-    Locator::graphics  = new Graphics();
-    Locator::resources = new Resources();
+    Locator::graphics_.reset(new Graphics());
+    Locator::resources_.reset(new Resources());
 }
 
 void Locator::setGraphics (Graphics& graphics)
 {
-    Locator::graphics = &graphics;
+    Locator::graphics_.reset(&graphics);
 }
 
 void Locator::setResources (Resources& resources)
 {
-    Locator::resources = &resources;
+    Locator::resources_.reset(&resources);
 }
 
-Graphics& Locator::getGraphics ()
+Graphics& Locator::graphics ()
 {
-    return *graphics;
+    if ( Locator::graphics_ == NULL )
+    {
+        Locator::init();
+    }
+
+    return *Locator::graphics_;
 }
 
-Resources& Locator::getResources ()
+Resources& Locator::resources ()
 {
-    return *resources;
+    if ( Locator::resources_ == NULL )
+    {
+        Locator::init();
+    }
+
+    return *Locator::resources_;
 }
 
-Graphics*  Locator::graphics  = NULL;
-Resources* Locator::resources = NULL;
+scoped_ptr<Graphics> Locator::graphics_;
+scoped_ptr<Resources> Locator::resources_;
