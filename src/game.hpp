@@ -2,6 +2,7 @@
 #define GAME
 
 #include <map>
+#include <boost/ptr_container/ptr_map.hpp>
 #include "graphics.hpp"
 #include "mode.hpp"
 
