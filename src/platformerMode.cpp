@@ -9,11 +9,15 @@ PlatformerMode::PlatformerMode (Game& game) :
 
 void PlatformerMode::doFrame ()
 {
-    Graphics&         graphics  = Locator::graphics();
-    Resources&        resources = Locator::resources();
-    Graphics::Surface image     = resources.loadImage("test.jpg");
+    Graphics&  graphics  = Locator::graphics();
+    Resources& resources = Locator::resources();
+    Surface    image     = resources.loadImage("test.jpg");
     
-    SDL_BlitSurface(image, NULL, graphics.screen(), NULL);
+    image.setDims(10, 10);
+    image.setSource(50, 50);
+    image.setDest(50, 50);
+        
+    image.draw(graphics.screen());
     graphics.flip();
     SDL_Delay(1000);
 

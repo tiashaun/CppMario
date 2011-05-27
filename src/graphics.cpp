@@ -12,7 +12,8 @@ void Graphics::flip ()
     SDL_Flip(this->screen_);
 }
 
-SDL_Surface* Graphics::screen ()
+Graphics::Screen Graphics::screen ()
 {
     return this->screen_;
 }
+

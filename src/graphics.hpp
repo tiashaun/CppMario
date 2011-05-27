@@ -6,16 +6,16 @@
 class Graphics
 {
     public:
-        typedef SDL_Surface* Surface;
+        typedef SDL_Surface* Screen;
 
-        Graphics ();
+        Graphics  ();
 
         void flip ();
 
-        Surface screen ();
+        Screen screen ();
 
     private:
-        Surface screen_;
+        Screen screen_;
 };
 
 #endif

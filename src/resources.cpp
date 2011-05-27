@@ -1,10 +1,9 @@
 #include "resources.hpp"
 #include "SDL/SDL_image.h"
-#include <iostream>
 
 using namespace std;
 
-SDL_Surface* Resources::loadImage (string file)
+Surface Resources::loadImage (string file)
 {
     SDL_Surface* loadedImage    = NULL;
     SDL_Surface* optimizedImage = NULL;
@@ -17,8 +16,8 @@ SDL_Surface* Resources::loadImage (string file)
 
         SDL_FreeSurface(loadedImage);
     }
-
-    return optimizedImage;
+    
+    return Surface(optimizedImage);
 }
 
 string Resources::absolute (string dir, string name)

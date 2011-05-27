@@ -1,6 +1,7 @@
 #include "game.hpp"
 #include "mainMenuMode.hpp"
 #include "platformerMode.hpp"
+#include "locator.hpp"
 
 using namespace std;
 using namespace boost;
@@ -17,10 +18,16 @@ Game::Game (ModeID initialModeID) :
 
 void Game::begin ()
 {
+    Graphics& graphics = Locator::graphics();
+
     while ( not this->done_ )
     {
         this->currentMode_.lock()->doFrame();
+
+        graphics.flip();
     }
+
+    SDL_Quit();
 }
 
 void Game::end ()

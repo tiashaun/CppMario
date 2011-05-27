@@ -3,11 +3,12 @@
 
 #include <string>
 #include "SDL/SDL.h"
+#include "surface.hpp"
 
 class Resources
 {
     public:
-        SDL_Surface* loadImage (std::string file);
+        Surface loadImage (std::string file);
 
     private:
         std::string absolute (std::string dir, std::string file);
