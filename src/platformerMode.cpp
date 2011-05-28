@@ -11,15 +11,11 @@ void PlatformerMode::doFrame ()
 {
     Graphics&  graphics  = Locator::graphics();
     Resources& resources = Locator::resources();
-    Surface    image     = resources.loadImage("test.jpg");
+    Map        map       = resources.loadMap("test1.tmx");
     
-    image.setDims(10, 10);
-    image.setSource(50, 50);
-    image.setDest(50, 50);
-        
-    image.draw(graphics.screen());
+    map.draw(graphics.screen());
     graphics.flip();
-    SDL_Delay(1000);
+    SDL_Delay(5000);
 
     this->game_.end();
 }

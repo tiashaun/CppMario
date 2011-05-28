@@ -6,6 +6,13 @@
 class Graphics
 {
     public:
+        enum
+        {
+            SCREEN_WIDTH  = 640,
+            SCREEN_HEIGHT = 480,
+            SCREEN_BPP    = 32
+        };
+
         typedef SDL_Surface* Screen;
 
         Graphics  ();

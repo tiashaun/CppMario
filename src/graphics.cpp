@@ -4,7 +4,12 @@ Graphics::Graphics ()
 {
     SDL_Init(SDL_INIT_VIDEO);
 
-    this->screen_ = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
+    this->screen_ = SDL_SetVideoMode(
+        Graphics::SCREEN_WIDTH,
+        Graphics::SCREEN_HEIGHT,
+        Graphics::SCREEN_BPP,
+        SDL_SWSURFACE
+    );
 }
 
 void Graphics::flip ()
